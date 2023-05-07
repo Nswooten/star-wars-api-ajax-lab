@@ -6,8 +6,10 @@ const NavBar = () => {
   return ( 
     <>
     <header>
-      <img className='logo' src={ reactLogo } alt="The React Logo" />
-      <h2>StarWars</h2>
+      <Link to={"/"}>
+        <img className='logo' src={ reactLogo } alt="The React Logo" />
+      </Link>
+      <h1>Star Wars</h1>
       <nav>
         <Link to='/starships'>Starships</Link>
       </nav>
