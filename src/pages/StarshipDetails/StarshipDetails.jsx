@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useLocation } from "react-router-dom"
 import { getStarship } from "../../services/api-calls"
 import { Link } from "react-router-dom"
 
 const StarshipDetails = () => {
   const [starshipDetails, setStarshipDetails] = useState({})
-
+  const {state: {url}} = useLocation()
   const { starshipId } = useParams()
+  console.log("component:", url);
   
 
   useEffect(() => {
     const fetchDetails = async () => {
-      const starshipData = await getStarship(starshipId)
+      const starshipData = await getStarship(url)
       setStarshipDetails(starshipData)
     }
     fetchDetails()
-  }, [starshipId] )
+  }, [url] )
   console.log(starshipDetails);
   if (!setStarshipDetails) return <h1>There is no loading...only load or load not</h1>
 

@@ -22,7 +22,7 @@ const StarshipList = () => {
       <h1>StarShip List (OMG Badass!)</h1>
       {starshipList.map(starship => 
         // console.log(starship);
-        <Link  key={starship.url} to={`/starships/${starship.url}`}>
+        <Link  key={starship.url} to={`/starships/details`} state={{url: starship.url}}>
           <div className="link-container">
             {starship.name}
           </div>

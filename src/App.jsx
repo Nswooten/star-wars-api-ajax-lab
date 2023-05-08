@@ -18,7 +18,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/starships" element={<StarshipList />} />
-        <Route path="/starships/https://swapi.dev/api/starships/:starshipId/" element={<StarshipDetails />} />
+        {/* <Route path="/starships/https://swapi.dev/api/starships/:starshipId/" element={<StarshipDetails />} /> */}
+        <Route path="/starships/details" element={<StarshipDetails />} />
+
       </Routes>
     </>
   )
